@@ -109,9 +109,9 @@ Analyzes call outcomes, disposition trends, call attempts, and QA performance.
 
 ## Important DAX Measures
 
-### Total Sales
-
 ```DAX
+**## Total Sales**
+
 Total Sales =
 CALCULATE(
     COUNTROWS(Terminal_Records),
