@@ -195,6 +195,33 @@ AVERAGEX(
 - Used bookmarks to reset report filters.
 - Applied conditional formatting to highlight agent conversion performance.
 
+## Data Model & Tables Used
+
+The report uses multiple related tables to separate master data, transactional data, customer data, and QA information.
+
+Main tables used:
+
+- **Agent_Master** – Agent details and team information
+- **Call_History** – Call transactions, call status, talk time, wrap time, attempts, and dispositions
+- **Campaign_Master** – Campaign, process, and dialing-mode information
+- **Disposition_Master** – Disposition codes, categories, and disposition types
+- **Callable_Records** – Customer and process-level callable records
+- **Terminal_Records** – Successful/final disposition records used for sales calculation
+- **QA_Verifier** – QA audit results and scores
+- **Date_Table** – Dedicated calendar table used for time-based analysis
+
+Relationships were created based on valid business keys so that filters propagate correctly between master and transactional tables.
+
+---
+
+## Project Conclusion
+
+This project demonstrates an end-to-end Power BI solution for CRM and call-center analytics.
+
+The report combines call activity, sales performance, agent productivity, campaign analysis, customer insights, dispositions, and QA performance into a single interactive dashboard.
+
+The project also demonstrates practical Power BI concepts such as data modeling, DAX, filter context, time intelligence, bookmarks, drill-through, report-page tooltips, synchronized slicers, conditional formatting, and report-level filtering.
+
 ---
 
 ## Data Logic
