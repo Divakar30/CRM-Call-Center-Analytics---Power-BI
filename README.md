@@ -48,31 +48,21 @@ The objective of this project is to provide a consolidated analytical view of CR
 
 Provides a high-level view of CRM sales and call performance.
 
-![CRM Overview](screenshots/01_CRM_Overview.png)
-
 ### 2. Agent Performance
 
 Analyzes agent-level and team-level performance.
-
-![Agent Performance](screenshots/02_Agent_Performance.png)
 
 ### 3. Campaign Analysis
 
 Analyzes campaign performance, dialing modes, monthly sales, and geographic sales distribution.
 
-![Campaign Analysis](screenshots/03_Campaign_Analysis.png)
-
 ### 4. Customer Insights
 
 Provides customer-level demographic and financial analysis.
 
-![Customer Insights](screenshots/04_Customer_Insights.png)
-
 ### 5. Call & Disposition Analysis
 
 Analyzes call outcomes, disposition trends, call attempts, and QA performance.
-
-![Call & Disposition Analysis](screenshots/05_Call_Disposition_Analysis.png)
 
 ---
 
