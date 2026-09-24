@@ -107,6 +107,96 @@ Analyzes call outcomes, disposition trends, call attempts, and QA performance.
 
 ---
 
+## Important DAX Measures
+
+### Total Sales
+
+```DAX
+Total Sales =
+CALCULATE(
+    COUNTROWS(Terminal_Records),
+    Terminal_Records[Disp_Code] IN {1001, 1002}
+)
+
+## Sales Conversion %
+
+```DAX
+Sales Conversion % =
+DIVIDE(
+    [Total Sales],
+    [Answered Calls],
+    0
+)
+
+### Answer Rate %
+
+```DAX
+Answer Rate % =
+DIVIDE(
+    [Answered Calls],
+    [Total Calls],
+    0
+)
+
+### Previous Month Sales
+
+```DAX
+Previous Month Sales =
+CALCULATE(
+    [Total Sales],
+    DATEADD(Date_Table[Date], -1, MONTH)
+)
+
+### Monthly Sales Change
+
+```DAX
+Monthly Sales Change =
+[Total Sales] - [Previous Month Sales]
+
+### Total Customers
+
+```DAX
+Total Customers =
+DISTINCTCOUNT(Callable_Records[Mobile_No])
+
+### Avg Annual Income
+
+```DAX
+Avg Annual Income =
+AVERAGEX(
+    VALUES(Callable_Records[Mobile_No]),
+    CALCULATE(MAX(Callable_Records[Annual_Income]))
+)
+
+---
+
+## Key Business Insights
+
+- Approximately 74K calls were analyzed after excluding test campaign records.
+- Around 58% of calls were answered.
+- The dashboard recorded 4,367 successful sales with an overall sales conversion rate of approximately 10.15%.
+- Customer analysis identified approximately 18.34K unique customers.
+- Progressive dialing contributed the largest share of campaign sales compared with other dialing modes.
+- Campaign performance varied across months, making monthly trend and month-over-month analysis useful for identifying changes in sales performance.
+- Agent-level analysis showed differences in call volumes, sales, and conversion rates across teams and individual agents.
+- Callback was one of the most frequent call dispositions.
+- QA analysis was kept independent from campaign and call slicers because the QA dataset did not have a valid campaign filtering relationship.
+
+---
+
+## Project Highlights
+
+- Designed a 5-page interactive CRM analytics report.
+- Built customer-level and record-level metrics based on different data grains.
+- Used a dedicated Date table for time-based analysis.
+- Applied report-level filtering to exclude test campaign data.
+- Implemented synchronized date slicers across transactional report pages.
+- Created drill-through customer details and a campaign report-page tooltip.
+- Used bookmarks to reset report filters.
+- Applied conditional formatting to highlight agent conversion performance.
+
+---
+
 ## Data Logic
 
 - Customers are identified using unique mobile numbers.
